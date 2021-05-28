@@ -30,6 +30,15 @@ class TestClass(unittest.TestCase):
 
     self.assertEqual(len(UserClass.userList),1)
 
+  def test_create_credentials(self):
+    '''
+    checks if function creates credential
+    '''
+    self.new_credential = CredentialsClass('twitter','email@test.com','1234password')
+
+    self.assertEqual(self.new_credential.account,'twitter')
+    self.assertEqual(self.new_credential.username,'email@test.com')
+    self.assertEqual(self.new_credential.password,'1234password')
 
 
 
