@@ -57,13 +57,29 @@ class TestClass(unittest.TestCase):
 
   def test_save_multiple_credentials(self):
     '''
+    test to check that save credential method saves multiple credentials
     '''
     self.new_credential.save_credential()
-
     second_credential= CredentialsClass('linkedIn', 'Adongo254', 'adongo2021')
     second_credential.save_credential()
 
     self.assertEqual(len(CredentialsClass.credentialsList),2)
+
+  def test_delete_credential(self):
+    '''
+    test to check that delete credential method deletes a credential instance
+    '''
+    self.new_credential.save_credential()
+    second_credential= CredentialsClass('linkedIn', 'Adongo254', 'adongo2021')
+    second_credential.save_credential()
+
+    second_credential.delete_credential()
+
+    self.assertEqual(len(CredentialsClass.credentialsList),1)
+
+
+
+
 
        
 
