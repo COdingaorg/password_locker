@@ -12,6 +12,7 @@ class TestClass(unittest.TestCase):
     set up functions that runs after each test function
     '''
     self.new_user = UserClass('Benard','Kibet','benard.kibet@student.motingaschool.com','password')
+    self.new_credential = CredentialsClass('twitter','email@test.com','1234password')
   
   def test_user_creation(self):
     '''
@@ -40,6 +41,13 @@ class TestClass(unittest.TestCase):
     self.assertEqual(self.new_credential.username,'email@test.com')
     self.assertEqual(self.new_credential.password,'1234password')
 
+  def test_save_credentials(self):
+    '''
+    checks if save fuction saves the created credentials
+    '''
+    self.new_credential.save_credential()
+
+    self.assertEqual(len(CredentialsClass.credentialsList),1)
 
 
 
