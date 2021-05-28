@@ -14,6 +14,12 @@ class TestClass(unittest.TestCase):
     self.new_user = UserClass('Benard','Kibet','benard.kibet@student.motingaschool.com','password')
     self.new_credential = CredentialsClass('twitter','email@test.com','1234password')
   
+  def tearDown(self):
+    '''
+    tearDown funtion that cleans up the credentials list after test setup is done
+    '''
+    CredentialsClass.credentialsList=[]
+  
   def test_user_creation(self):
     '''
     checks if a function creates a user
