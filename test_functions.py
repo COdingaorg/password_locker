@@ -20,3 +20,6 @@ class TestClass(unittest.TestCase):
     self.assertEqual(self.new_user.last_name,'Kibet')
     self.assertEqual(self.new_user.email,'benard.kibet@student.motingaschool.com')
     self.assertEqual(self.new_user.password,'password')
+
+if __name__=='__main__':
+  unittest.main()
