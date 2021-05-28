@@ -11,3 +11,9 @@ class UserClass:
       self.last_name = lname
       self.email = email_address
       self.password = password
+
+  def save_user(self):
+    '''
+    saves a user instance created
+    '''
+    UserClass.userList.append(self)
