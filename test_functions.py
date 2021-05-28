@@ -49,6 +49,17 @@ class TestClass(unittest.TestCase):
 
     self.assertEqual(len(CredentialsClass.credentialsList),1)
 
+  def test_save_multiple_credentials(self):
+    '''
+    '''
+    self.new_credential.save_credential()
+
+    second_credential= CredentialsClass('linkedIn', 'Adongo254', 'adongo2021')
+    second_credential.save_credential()
+
+    self.assertEqual(len(CredentialsClass.credentialsList),2)
+
+       
 
 if __name__=='__main__':
   unittest.main()
