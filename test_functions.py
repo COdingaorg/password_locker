@@ -88,13 +88,7 @@ class TestClass(unittest.TestCase):
     credential_find=CredentialsClass.find_credential_by_account('linkedIn')
 
     self.assertEqual(credential_find.username,second_credential.username)
-
-
-
-
-
-
-       
+  
 
 if __name__=='__main__':
   unittest.main()
