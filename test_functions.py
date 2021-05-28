@@ -1,6 +1,7 @@
 import unittest
 from credentialsClass import CredentialsClass
 from userClass import UserClass
+import run
 
 class TestClass(unittest.TestCase):
   '''
@@ -20,6 +21,18 @@ class TestClass(unittest.TestCase):
     self.assertEqual(self.new_user.last_name,'Kibet')
     self.assertEqual(self.new_user.email,'benard.kibet@student.motingaschool.com')
     self.assertEqual(self.new_user.password,'password')
+  
+  def test_save_user(self):
+    '''
+    checks if function saves user
+    '''
+    self.new_user.save_user()
+
+    self.assertEqual(len(UserClass.userList),1)
+
+
+
+
 
 if __name__=='__main__':
   unittest.main()
