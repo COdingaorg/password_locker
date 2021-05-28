@@ -50,6 +50,5 @@ class TestClass(unittest.TestCase):
     self.assertEqual(len(CredentialsClass.credentialsList),1)
 
 
-
 if __name__=='__main__':
   unittest.main()
