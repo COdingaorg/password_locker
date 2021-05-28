@@ -77,6 +77,19 @@ class TestClass(unittest.TestCase):
 
     self.assertEqual(len(CredentialsClass.credentialsList),1)
 
+  def test_find_credentials(self):
+    '''
+    Test to check if find credential returns the instance that matches the searched value
+    '''
+    self.new_credential.save_credential()
+    second_credential= CredentialsClass('linkedIn', 'Adongo254', 'adongo2021')
+    second_credential.save_credential()
+
+    credential_find=CredentialsClass.find_credential_by_account('linkedIn')
+
+    self.assertEqual(credential_find.username,second_credential.username)
+
+
 
 
 
