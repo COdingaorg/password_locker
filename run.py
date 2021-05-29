@@ -41,6 +41,11 @@ def find_credential_by_account(account):
   '''
   return CredentialsClass.find_credential_by_account(account)
 
+def display_credentals_created():
+  '''
+  implementing display_credentials 
+  '''
+  return CredentialsClass.displays_credentials()
 
   
   
