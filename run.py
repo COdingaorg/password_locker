@@ -16,10 +16,15 @@ def save_created_user(user):
   '''
   user.save_user()
 
-def credential_creator(usernameInput, passwordInput):
+def credential_creator(username, password):
   '''
   creates a credential  new class intatance
   '''
+  new_credential = CredentialsClass(username, password)
+  return new_credential
+
+
+  
   
 
 
