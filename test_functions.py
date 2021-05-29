@@ -93,7 +93,7 @@ class TestClass(unittest.TestCase):
     '''
     tests to check of a fuction displays a credential
     '''
-    self.assertEqual(CredentialsClass.displays_credentials,CredentialsClass.credentialsList)
+    self.assertEqual(CredentialsClass.displays_credentials(),CredentialsClass.credentialsList)
 
 
 if __name__=='__main__':

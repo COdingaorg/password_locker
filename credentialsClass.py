@@ -32,6 +32,11 @@ class CredentialsClass:
       if credentiaItem.account == account:
         return credentiaItem
 
-
+  @classmethod
+  def displays_credentials(cls):
+    '''
+    a method that displays credentials list
+    '''
+    return cls.credentialsList
 
   
