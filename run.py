@@ -35,6 +35,12 @@ def credential_delete(new_credential):
   '''
   new_credential.delete_credential()
 
+def find_credential_by_account(account):
+  '''
+  implementing finding credential using account argument
+  '''
+  return CredentialsClass.find_credential_by_account(account)
+
   
   
 
