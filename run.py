@@ -58,10 +58,11 @@ def main():
   print(f'Welcome to PASSWORD lOCKER command Line application \n')
   print('To able to work with the application, Please create your account')
   
-  shortCodes = input(f'Type ca to create your account \n')
+  shortCodes = input(f'Type ca to create your account: ')
+  print(f'You have entered {shortCodes}')
   while shortCodes != 'ca':
-    print('sorry, we did not catch that.')
-    shortCodes=input(' Please enter ca to create your account').lower
+    print('sorry, we did not catch that.Try using small leters')
+    shortCodes=input(' Please enter ca to create your account :')
 
   else:  
     nameFirst = input("Enter your First name: ")
@@ -72,22 +73,46 @@ def main():
 
     new_user = create_user(nameFirst, nameLast, holderemail, passW)
 
-    print(f'Hello {new_user.first_name}.Your Password Locker account was created succeffully: ')
+    print(f'Hello {new_user.first_name}.Your Password Locker account was created succeffully: \n')
 
     #save user account
     save_created_user(new_user)
+    
 
-    print('Time to store your credentials. Create Credential to store')
-    #Creating credentials
+    def create_credential_repeat():
+      print('Time to store your credentials. Create Credential to store')
+      #Creating credentials
 
-    accountInput = input('What account credentials do you want to save?: ')
-    usernameInput = input(f"what is the username of your {accountInput} account?:  ")
-    passWInput = input(f'Enter your the assword of your {accountInput} account: ')
-    #creating a credential
+      accountInput = input('Enter Account name whose credentials you want to save: ')
+      usernameInput = input(f"what is the username of your {accountInput} account?:  ")
+      passWInput = input(f'Enter your the password of your {accountInput} account: ')
+      #creating a credential
+      print(f'\n')
+      new_credential = credential_creator(accountInput, usernameInput, passWInput)
+      #save the credential created
+      credential_saver(new_credential)
 
-    new_credential = credential_creator(accountInput, usernameInput, passWInput)
-    #save the credential created
-    credential_saver(new_credential)
+      print(f'Your {new_credential.account} account credentials have been saved successfully ')
+      print(f'Account Name : {new_credential.account} \n Username: {new_credential.username} \n password: {new_credential.password}')
+
+      #save another credential
+      print('Do you want to save another account credential')
+      answer= input('Y/N : ')
+      if answer == 'Y' or answer == 'y':
+        create_credential_repeat()
+      else:
+        print('Thank you for using PASSWORD LOCKER')
+        print(f'To view you credentials type: view \n to find a credential type: find')
+        conti = input()
+        while conti == 'view' or conti == 'VIEW' or conti == 'View':
+            display_credentals_created()
+            if conti == 'find' or conti == 'FIND' or conti == 'Find': 
+            print()#incomplete line
+        else:
+          print('sorry we did not catch that, kindly check your spelling')
+
+
+    create_credential_repeat()
     
 
 if __name__=='__main__':
