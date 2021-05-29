@@ -77,8 +77,18 @@ def main():
     #save user account
     save_created_user(new_user)
 
-    
+    print('Time to store your credentials. Create Credential to store')
+    #Creating credentials
 
+    accountInput = input('What account credentials do you want to save?: ')
+    usernameInput = input(f"what is the username of your {accountInput} account?:  ")
+    passWInput = input(f'Enter your the assword of your {accountInput} account: ')
+    #creating a credential
+
+    new_credential = credential_creator(accountInput, usernameInput, passWInput)
+    #save the credential created
+    credential_saver(new_credential)
+    
 
 if __name__=='__main__':
   main()
