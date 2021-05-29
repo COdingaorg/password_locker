@@ -89,6 +89,12 @@ class TestClass(unittest.TestCase):
 
     self.assertEqual(credential_find.username,second_credential.username)
   
+  def test_display_of_credentials(self):
+    '''
+    tests to check of a fuction displays a credential
+    '''
+    self.assertEqual(CredentialsClass.displays_credentials,CredentialsClass.credentialsList)
+
 
 if __name__=='__main__':
   unittest.main()
