@@ -52,14 +52,13 @@ def generates_password():
   implementing password generator function in the Credentials Class
   '''
   return CredentialsClass.password_generator()
-  
 
-
+#main function
 def main():
-  print('Welcome to PASSWORD lOCKER command Line application')
-  print('To able to work with he application, Please create your account')
+  print(f'Welcome to PASSWORD lOCKER command Line application \n')
+  print('To able to work with the application, Please create your account')
   
-  shortCodes = input('Type ca to create your account')
+  shortCodes = input(f'Type ca to create your account \n')
   while shortCodes != 'ca':
     print('sorry, we did not catch that.')
     shortCodes=input(' Please enter ca to create your account').lower
@@ -69,11 +68,11 @@ def main():
     nameLast = input('Enter your last Name: ')
     holderemail = input("enter your email: ")
     print('finally...')
-    passW = input('Enter the password to set for you password locker account')
+    passW = input('Enter the password to set for you password locker account: ')
 
-    create_user(nameFirst, nameLast, holderemail, passW)
-
-    print(f'Hello {nameFirst}.Your Password Locker account was created succeffully')
+    new_user = create_user(nameFirst, nameLast, holderemail, passW)
+    
+    print(f'Hello {new_user.first_name}.Your Password Locker account was created succeffully: ')
 
     
 if __name__=='__main__':
