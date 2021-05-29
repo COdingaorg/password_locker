@@ -28,7 +28,7 @@ class CredentialsClass:
     '''
     a method that finds a credential instance by using a value for account argument
     '''
-    for credentiaItem in CredentialsClass.credentialsList:
+    for credentiaItem in cls.credentialsList:
       if credentiaItem.account == account:
         return credentiaItem
 
