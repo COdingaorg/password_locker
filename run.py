@@ -104,12 +104,17 @@ def main():
         print('Thank you for using PASSWORD LOCKER')
         print(f'To view you credentials type: view \n to find a credential type: find')
         conti = input()
-        while conti == 'view' or conti == 'VIEW' or conti == 'View':
+        while True:
+          if conti == 'view' or conti == 'VIEW' or conti == 'View':
             display_credentals_created()
-            if conti == 'find' or conti == 'FIND' or conti == 'Find': 
-            print()#incomplete line
-        else:
-          print('sorry we did not catch that, kindly check your spelling')
+            break
+          if conti == 'find' or conti == 'FIND' or conti == 'Find':
+            print('Enter account Name you are serching...')
+            accountName = input('Account Name: ')
+
+            find_credential_by_account(accountName)
+            break
+        print('sorry we did not catch that, kindly check your spelling')
 
 
     create_credential_repeat()
