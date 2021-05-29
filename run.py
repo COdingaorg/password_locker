@@ -29,7 +29,11 @@ def credential_saver(new_credential):
   '''
   new_credential.save_credential()
 
-
+def credential_delete(new_credential):
+  '''
+  implementing the delete credential
+  '''
+  new_credential.delete_credential()
 
   
   
