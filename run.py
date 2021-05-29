@@ -23,6 +23,12 @@ def credential_creator(account, username, password):
   new_credential = CredentialsClass(account, username, password)
   return new_credential
 
+def credential_saver(new_credential):
+  '''
+  method that implements saving og the credential created
+  '''
+  new_credential.save_credential()
+
 
 
   
@@ -34,7 +40,11 @@ def main():
   print('To able to work with he application, Please create your account')
   
   shortCodes = input('Type ca to create your account')
-  while shortCodes == 'ca':
+  while shortCodes != 'ca':
+    print('sorry, we did not catch that.')
+    shortCodes=input(' Please enter ca to create your account').lower
+
+  else:  
     nameFirst = input("Enter your First name: ")
     nameLast = input('Enter your last Name: ')
     holderemail = input("enter your email: ")
@@ -46,9 +56,5 @@ def main():
     print(f'Hello {nameFirst}.Your Password Locker account was created succeffully')
 
     
-  else:
-    print('sorry, we did not catch that.')
-    shortCodeinput(' Please enter ca to create your account')
-
 if __name__=='__main__':
   main()
