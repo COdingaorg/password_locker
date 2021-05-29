@@ -47,7 +47,11 @@ def display_credentals_created():
   '''
   return CredentialsClass.displays_credentials()
 
-
+def generates_password():
+  '''
+  implementing password generator function in the Credentials Class
+  '''
+  return CredentialsClass.password_generator()
   
 
 
