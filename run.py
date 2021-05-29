@@ -71,9 +71,14 @@ def main():
     passW = input('Enter the password to set for you password locker account: ')
 
     new_user = create_user(nameFirst, nameLast, holderemail, passW)
-    
+
     print(f'Hello {new_user.first_name}.Your Password Locker account was created succeffully: ')
 
+    #save user account
+    save_created_user(new_user)
+
     
+
+
 if __name__=='__main__':
   main()
