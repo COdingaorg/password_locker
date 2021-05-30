@@ -67,7 +67,3 @@ class CredentialsClass:
     
 
     return random_password
-
-  password = password_generator()  
-  print(type(password))
-  print(password+' this is it')
