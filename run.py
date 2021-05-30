@@ -56,7 +56,7 @@ def generates_password():
 #main function
 def main():
   print(f'Welcome to PASSWORD lOCKER command Line application \n')
-  print('To able to work with the application, Please create your account')
+  print('To be able to work with the application, Please create your account')
   
   shortCodes = input(f'Type ca to create your account: ')
   print(f'You have entered {shortCodes}')
@@ -73,9 +73,9 @@ def main():
 
     new_user = create_user(nameFirst, nameLast, holderemail, passW)
 
-    print(f'Hello {new_user.first_name}.Your Password Locker account was created succeffully: \n')
+    print(f'Hello {new_user.first_name}.Your Password Locker account was created successfully: \n')
 
-    #save user account
+     #save user account
     save_created_user(new_user)
     
 
@@ -85,7 +85,12 @@ def main():
 
       accountInput = input('Enter Account name whose credentials you want to save: ')
       usernameInput = input(f"what is the username of your {accountInput} account?:  ")
-      passWInput = input(f'Enter your the password of your {accountInput} account: ')
+      print('Do you want to Generate a password? Y/N')
+      selectInput = input()
+      if selectInput == 'y' or selectInput == 'Y':
+        passWInput = generates_password()
+      else:
+        passWInput = input(f'Enter your the password of your {accountInput} account: ')
       #creating a credential
       print(f'\n')
       new_credential = credential_creator(accountInput, usernameInput, passWInput)
@@ -102,23 +107,25 @@ def main():
         create_credential_repeat()
       else:
         print('Thank you for using PASSWORD LOCKER')
-        print(f'To view you credentials type: view \n to find a credential type: find')
-        conti = input()
-        while True:
+        def view_credentials():
+          print(f'To view you credentials type: view \nTo find a credential type: find')
+          conti = input()
           if conti == 'view' or conti == 'VIEW' or conti == 'View':
-            display_credentals_created()
-            break
-          if conti == 'find' or conti == 'FIND' or conti == 'Find':
-            print('Enter account Name you are serching...')
+            print('Here are your saved credentials')
+            credential = display_credentals_created()
+            for items in credential:
+              print(f"{items.account}\n{items.username}\n{items.password}")
+              print(f'\n')
+           
+          elif conti == 'find' or conti == 'FIND' or conti == 'Find':
+            print('Enter account Name you are searching...')
             accountName = input('Account Name: ')
-
             find_credential_by_account(accountName)
-            break
-        print('sorry we did not catch that, kindly check your spelling')
-
-
+          else:
+            print(f'sorry we did not catch that, kindly check your spelling\n')  
+            view_credentials()
+        view_credentials()
     create_credential_repeat()
-    
-
+        
 if __name__=='__main__':
   main()
