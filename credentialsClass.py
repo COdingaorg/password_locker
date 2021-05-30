@@ -25,12 +25,11 @@ class CredentialsClass:
     '''
     CredentialsClass.credentialsList.remove(self)
 
-  @classmethod
-  def find_credential_by_account(cls, account):
+  def find_credential_by_account(account):
     '''
     a method that finds a credential instance by using a value for account argument
     '''
-    for credentiaItem in cls.credentialsList:
+    for credentiaItem in CredentialsClass.credentialsList:
       if credentiaItem.account == account:
         return credentiaItem
 

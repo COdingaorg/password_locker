@@ -116,11 +116,20 @@ def main():
             for items in credential:
               print(f"{items.account}\n{items.username}\n{items.password}")
               print(f'\n')
+            view_credentials()
            
           elif conti == 'find' or conti == 'FIND' or conti == 'Find':
             print('Enter account Name you are searching...')
             accountName = input('Account Name: ')
-            find_credential_by_account(accountName)
+            found = find_credential_by_account(accountName)
+            print(f"Account Credential Found: \n{found.account}\n{found.username}\n{found.password}\n")
+            option=input('Do you want to delete this item? Y/N')
+            if option == 'Y' or option == 'y':
+              credential_delete(found)
+              print("item deleted successfully")
+              view_credentials()
+            else:
+              view_credentials()
           else:
             print(f'sorry we did not catch that, kindly check your spelling\n')  
             view_credentials()
