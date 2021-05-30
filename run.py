@@ -87,7 +87,7 @@ def main():
 
     else:
       print(f'Login successfull! Hello {new_user.first_name}')
-      print('Time to store your credentials. Create Credential to store')
+      print('Let\'s Begin. Create or Store already existing account credentials')
       def create_credential_repeat():
         
         #Creating credentials
