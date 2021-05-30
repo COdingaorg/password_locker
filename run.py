@@ -58,7 +58,7 @@ def main():
   print(f'Welcome to PASSWORD lOCKER command Line application \n')
   print('To be able to work with the application, Please create your account')
   
-  shortCodes = input(f'Type ca to create your account amd login: ')
+  shortCodes = input(f'Type ca to create your account and login: ')
   print(f'You have entered {shortCodes}')
   while shortCodes != 'ca':
     print('sorry, we did not catch that.Try using small leters')
@@ -80,10 +80,12 @@ def main():
     
     print('Login your account to proceed')
     logUser = input('Enter email: ')
-    logpassword = input('Enter password')
+    logpassword = input('Enter password: ')
     #Logging in using created program
-    while logUser !=new_user.email and logpassword != new_user.password:
+    while logUser !=new_user.email or logpassword != new_user.password:
       print('Your username or password is wrong. please enter correct details')
+      logUser = input('Enter email: ')
+      logpassword = input('Enter password: ')
 
     else:
       print(f'Login successfull! Hello {new_user.first_name}')
